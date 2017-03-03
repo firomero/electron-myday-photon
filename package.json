@@ -1,0 +1,19 @@
+{
+  "name": "MyDay application",
+  "private": false,
+  "version": "1.0.0",
+  "authors": [
+    "Felix Ivan Romero Rodriguez<firomerorom4@gmail.com>",
+    "Yelena Islen San Juan <yelena870513@gmail.com>"
+  ],
+  "description": "My Day in Electron with Photon UI",
+  "repository": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}
