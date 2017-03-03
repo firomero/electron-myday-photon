@@ -1,54 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Photon</title>
+    <title>My Day</title>
 
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="vendor/angular/angular-csp.css">
     <link rel="stylesheet" href="css/photon.min.css">
+    <link rel="stylesheet" href="css/myday.css">
 
     <!-- Javascript -->
 
-  <body>
-    <div class="window">
+  <body >
+    <div class="window" ng-app="myday">
 
       <!-- .toolbar-header sits at the top of your app -->
       <header class="toolbar toolbar-header">
-        <h1 class="title">Photon</h1>
+        <h1 class="title">My Day</h1>
       </header>
 
       <!-- Your app's content goes inside .window-content -->
       <div class="window-content">
         <div class="pane-group">
-          <div class="pane pane-sm sidebar">
+          <div class="pane pane-sm sidebar" ng-controller="SideMenuController">
             <nav class="nav-group">
-              <h5 class="nav-group-title">Favorites</h5>
-              <span class="nav-group-item">
-                <span class="icon icon-home"></span>
-                connors
-              </span>
-              <span class="nav-group-item active">
-                <span class="icon icon-light-up"></span>
-                Photon
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-download"></span>
-                Downloads
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-folder"></span>
-                Documents
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-window"></span>
-                Applications
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-signal"></span>
-                AirDrop
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-monitor"></span>
-                Desktop
+              <h5 class="nav-group-title">Menu</h5>
+              <span ng-repeat="item in menu" class="nav-group-item" ng-class="{'active':item.icon==active}">
+                 <span class="icon icon-{{item.icon}}"></span>{{item.title}}
               </span>
             </nav>
           </div>
@@ -178,5 +155,18 @@
         </div>
       </div>
     </div>
+    <!--Scripts-->
+  <script src="vendor/underscore/underscore-min.js"></script>
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/angular-animate/angular-animate.min.js"></script>
+  <script src="vendor/angular-ui-scroll/dist/ui-scroll.min.js"></script>
+  <script src="vendor/angular-ui-scroll/dist/ui-scroll-grid.min.js"></script>
+  <script src="vendor/angular-ui-scroll/dist/ui-scroll-jqlite.min.js"></script>
+  <script src="vendor/angular-electron/angular-electron.min.js"></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!--Application-->
+  <script src="js/app.js"></script>
+  <script src="js/components/myday.controllers.js"></script>
+  <script src="js/components/myday.services.js"></script>
   </body>
 </html>
